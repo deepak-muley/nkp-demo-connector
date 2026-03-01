@@ -58,14 +58,23 @@ make release VERSION=1.0.0
 
 ### Release (GitHub Actions)
 
-Push a version tag to trigger a release:
+The workflow runs on **tag pushes** and **pull requests** to `main`.
+
+**Tag release** — Push a version tag to build and publish release artifacts:
 
 ```bash
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-This builds the image, pushes to `ghcr.io/deepak-muley/demo-connector`, and pushes the Helm chart to `oci://ghcr.io/deepak-muley/charts`.
+Artifacts:
+- Docker image: `ghcr.io/deepak-muley/demo-connector:1.0.0` and `:latest`
+- Helm chart: `ghcr.io/deepak-muley/charts/demo-connector:1.0.0`
+
+**Pull request** — Each PR to `main` builds and pushes preview artifacts:
+
+- Docker image: `ghcr.io/deepak-muley/demo-connector:pr-<N>-<SHA>`
+- Helm chart: `ghcr.io/deepak-muley/charts/demo-connector:pr-<N>-<SHA>`
 
 ## Catalog Entry
 
