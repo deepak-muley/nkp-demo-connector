@@ -1,0 +1,16 @@
+apiVersion: v2
+name: demo-connector
+description: Sample app that verifies connectivity to Weaviate. Demonstrates NKP catalog dependency flow.
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - nkp
+  - demo
+  - sample
+  - weaviate
+home: https://github.com/deepak-muley/nkp-demo-connector
+sources:
+  - https://github.com/deepak-muley/nkp-demo-connector
+maintainers:
+  - name: deepak-muley
+    url: https://github.com/deepak-muley
